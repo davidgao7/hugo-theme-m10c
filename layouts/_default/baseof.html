@@ -18,6 +18,10 @@
     {{ template "_internal/twitter_cards.html" . }}
     {{ template "_internal/opengraph.html" . }}
 
+    {{ if or .Params.math .Site.Params.math }}
+      {{ partial "math.html" . }}
+    {{ end }}
+
   </head>
   <body>
     <header class="app-header">
